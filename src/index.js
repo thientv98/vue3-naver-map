@@ -10,7 +10,7 @@ import NaverPolyline from './overlays/NaverPolyline.vue';
 
 const vueNaverMaps = {
   /**
-   * @param Vue
+   * @param Vue3
    * @param {
    * { clientID:string
    *  useGovAPI?:boolean
