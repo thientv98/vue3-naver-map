@@ -1,0 +1,24 @@
+{
+  "name": "vue3-naver-map",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "repository": "https://github.com/thientv98/vue3-naver-map.git",
+  "author": "thientv",
+  "license": "MIT",
+  "dependencies": {
+    "vue": "^2.6.11"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.4",
+    "@babel/core": "^7.10.4",
+    "@babel/preset-env": "7.10.4",
+    "@types/navermaps": "^3.0.4",
+    "babel-loader": "^8.1.0",
+    "babel-minify": "^0.5.1",
+    "babel-preset-minify": "^0.5.1",
+    "vue-loader": "^15.9.3",
+    "vue-template-compiler": "^2.6.11",
+    "webpack": "^4.43.0",
+    "webpack-cli": "3.3.12"
+  }
+}
