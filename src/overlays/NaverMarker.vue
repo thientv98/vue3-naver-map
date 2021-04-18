@@ -30,6 +30,7 @@
         }
       },
     },
+    emits: ['load', 'mousedown', 'mouseup', 'click', 'dblclick', 'rightclick', 'mouseover', 'mouseout', 'mousemove', 'dragstart', 'drag', 'dragend', 'touchstart', 'touchmove', 'touchend', 'pinchstart', 'pinch', 'pinchend', 'tap', 'longtap', 'twofingertap', 'doubletap'],
     data() {
       return {
         marker: null,
@@ -247,7 +248,7 @@
       if (!window.$naverMapsLoaded) window.$naverMapsCallback.push(naver);
       else naver(window.$naverMapsObject);
     },
-    destroyed() {
+    unmounted() {
       this.marker.setMap(null);
     }
   }

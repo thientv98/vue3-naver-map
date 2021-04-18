@@ -12,6 +12,7 @@
       clickable: Boolean,
       opacity: Number
     },
+    emits: ['load', 'click', 'dblclick'],
     data() {
       return {
         /**
@@ -78,7 +79,7 @@
       if (!window.$naverMapsLoaded) window.$naverMapsCallback.push(naver);
       else naver(window.$naverMapsObject);
     },
-    destroyed() {
+    unmounted() {
       this.groundOverlay.setMap(null);
     }
   }

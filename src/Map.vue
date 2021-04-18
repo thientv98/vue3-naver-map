@@ -19,6 +19,14 @@
       },
       initLayers: Array,
     },
+    emits: [
+          'addLayer', 'bounds_changed', 'center_changed', 'centerPoint_changed', 'click', 'dblclick', 'doubletap',
+          'drag', 'dragend', 'dragstart', 'idle', 'init_stylemap', 'keydown', 'keyup', 'longtap', 'mapType_changed',
+          'mapTypeId_changed', 'mousedown', 'mousemove', 'mouseout', 'mouseover', 'mouseup', 'panning', 'pinch',
+          'pinchend', 'pinchstart', 'projection_changed', 'removeLayer', 'resize', 'rightclick', 'size_changed', 'tap',
+          'tilesloaded', 'touchend', 'touchmove', 'touchstart', 'twofingertap', 'zoom_changed', 'zooming',
+          'load'
+          ],
     data() {
       return {
         mapStyle: {
@@ -343,7 +351,7 @@
         else document.getElementById('naver-map-load').onload = () => window.naver.maps.onJSContentLoaded = this.loadNaverMapsComponents;
       } else throw new Error('mapOptions must be included lat and lng.');
     },
-    destroyed() {
+    unmounted() {
       window.$naverMapsLoaded = false;
     }
   }

@@ -23,6 +23,7 @@
         zIndex: Number
       },
     },
+    emits: ['bounds_changed', 'click', 'clickable_changed', 'dblclick', 'mousedown', 'mouseout', 'mouseover', 'mouseup', 'visible_changed', 'zIndex_changed', 'load'],
     watch: {
       moreOptions: {
         deep: true,
@@ -173,7 +174,7 @@
       if (!window.$naverMapsLoaded) window.$naverMapsCallback.push(naver);
       else naver(window.$naverMapsObject);
     },
-    destroyed() {
+    unmounted() {
       this.ellipse.setMap(null);
     }
   }
