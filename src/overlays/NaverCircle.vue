@@ -25,6 +25,7 @@
         zIndex: Number
       },
     },
+    emits: [ 'load', 'center_changed', 'click', 'clickable_changed', 'dblclick', 'mousedown', 'mouseout', 'mouseover', 'mouseup', 'radius_changed', 'visible_changed', 'zIndex_changed'],
     data() {
       return {
         circle: null,
@@ -208,7 +209,7 @@
       if (!window.$naverMapsLoaded) window.$naverMapsCallback.push(naver);
       else naver(window.$naverMapsObject);
     },
-    destroyed() {
+    unmounted() {
       this.circle.setMap(null);
     }
   }

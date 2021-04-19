@@ -16,6 +16,7 @@
       isOpen: Boolean,
       moreOptions: Object,
     },
+    emits: ['open', 'close', 'load'],
     watch: {
       isOpen(newValue) {
         if (newValue) this.infoWindow.open(this.map, this.marker);
@@ -48,7 +49,7 @@
       if (!window.$naverMapsLoaded) window.$naverMapsCallback.push(naver);
       else naver(window.$naverMapsObject);
     },
-    destroyed() {
+    unmounted() {
       this.infoWindow.setMap(null);
     }
   }

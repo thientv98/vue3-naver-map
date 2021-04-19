@@ -22,6 +22,7 @@
         zIndex: Number
       },
     },
+    emits: ['load', 'click', 'clickable_changed', 'dblclick', 'mousedown', 'mouseout', 'mouseover', 'mouseup', 'visible_changed', 'zIndex_changed'],
     data() {
       return {
         /**
@@ -196,7 +197,7 @@
       if (!window.$naverMapsLoaded) window.$naverMapsCallback.push(naver);
       else naver(window.$naverMapsObject);
     },
-    destroyed() {
+    unmounted() {
       this.polygon.setMap(null);
     }
   }
